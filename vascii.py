@@ -8,19 +8,19 @@ from os import system, name
 
 def printIntro():
     INTRO = [
-        "                                         ",
-        "                                         ",
-        " _                                     _ ",
-         "| |                                   | |",
-         "| |__  _   _  __   _____  ___ _______ | |",
-         "| '_ \| | | | \ \ / / __|/ _ \_  / _ \| |",
-         "| |_) | |_| |  \ V /\__ \  __// / (_) | |",
-         "|_.__/ \__, |   \_/ |___/\___/___\___/|_|",
-         "        __/ |                            ",
-         "       |___/                             "
-         "                                         ",
-         "                                         ",
-         "                                         "]
+         "                                           ",
+         "                                           ",
+         " _                                       _ ",
+         "| |                                     | |",
+         "| |__  _   _    __   _____  ___ _______ | |",
+         "| '_ \| | | |   \ \ / / __|/ _ \_  / _ \| |",
+         "| |_) | |_| |    \ V /\__ \  __// / (_) | |",
+         "|_.__/ \__, |     \_/ |___/\___/___\___/|_|",
+         "        __/ |                              ",
+         "       |___/                               "
+         "                                           ",
+         "                                           ",
+         "                                           "]
     print('\n'.join(INTRO))
 
 
@@ -56,6 +56,13 @@ def makeAscii(img, img_size, pixel_size):
 printIntro()
 
 pixel_size = int(input('Enter the size of pixel: '))
+
+is_update_display = False
+if (input('Enable console clear [y/n] ? ') == 'y'):
+    is_update_display = True
+else:
+    is_update_display = False
+
 print('Please wait...')
 cap = VideoCapture(0)
 
@@ -67,7 +74,10 @@ while True:
     output = makeAscii(gray_img, h, pixel_size)
     output = [''.join(output[i]) for i in range(h // pixel_size)]
     output = '\n'.join(output)
-    clear()
+    if (is_update_display):
+        clear()
+    else:
+        print('\n' * 150)
     print(output)
 
 cap.release()
