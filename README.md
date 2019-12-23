@@ -4,5 +4,5 @@
 <p>Then select the display update mode. Updating the display is not recommended for a console with a small buffer.</p>
 
 <h2>Examples</h2>
-<img src="./img/example1.png" width="400"/>
-<img src="./img/example2.png" width="400"/>
+<img src="./img/example1.png" width="auto"/>
+<img src="./img/example2.png" width="auto"/>
