@@ -5,25 +5,6 @@ from cv2 import flip
 from numpy import sum as npsum
 from os import system, name
 
-
-def printIntro():
-    INTRO = [
-         "                                           ",
-         "                                           ",
-         " _                                       _ ",
-         "| |                                     | |",
-         "| |__  _   _    __   _____  ___ _______ | |",
-         "| '_ \| | | |   \ \ / / __|/ _ \_  / _ \| |",
-         "| |_) | |_| |    \ V /\__ \  __// / (_) | |",
-         "|_.__/ \__, |     \_/ |___/\___/___\___/|_|",
-         "        __/ |                              ",
-         "       |___/                               "
-         "                                           ",
-         "                                           ",
-         "                                           "]
-    print('\n'.join(INTRO))
-
-
 def clear():
     if name in ('nt','dos'):
         system("cls")
@@ -51,9 +32,6 @@ def makeAscii(img, img_size, pixel_size):
                 pass
 
     return ascii_img
-
-
-printIntro()
 
 pixel_size = int(input('Enter the size of pixel: '))
 
